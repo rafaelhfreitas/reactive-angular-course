@@ -6,6 +6,7 @@ import moment from 'moment';
 import {catchError} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 import { CourseService } from '../services/courses.service';
+import { LoadingService } from '../loading/loading.service';
 
 @Component({
     selector: 'course-dialog',
@@ -22,7 +23,8 @@ export class CourseDialogComponent implements AfterViewInit {
         private fb: FormBuilder,
         private dialogRef: MatDialogRef<CourseDialogComponent>,
         @Inject(MAT_DIALOG_DATA) course:Course,
-        private courseService: CourseService) {
+        private courseService: CourseService,
+        private loadingService: LoadingService) {
 
         this.course = course;
 
@@ -44,7 +46,7 @@ export class CourseDialogComponent implements AfterViewInit {
       const changes = this.form.value;
       this.courseService.saveCourse(this.course.id, changes)
             .subscribe(
-                (value) => this.dialogRef.close(value)
+                (value) => this.dialogRef.close(value )
             )
 
     }

@@ -5,6 +5,10 @@ import { concatMap, finalize, tap } from "rxjs/operators";
 @Injectable()
 export class LoadingService {
 
+    constructor() {
+        console.log("Loading service created...")
+    }
+
     private loadingSubject = new BehaviorSubject<boolean>(false);
 
     loading$ : Observable<boolean> = this.loadingSubject.asObservable();

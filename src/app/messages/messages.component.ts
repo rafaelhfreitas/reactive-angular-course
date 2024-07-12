@@ -10,6 +10,7 @@ import {tap} from 'rxjs/operators';
 })
 export class MessagesComponent implements OnInit {
 
+  showMessages: boolean = false;
 
   constructor() {
 
@@ -23,6 +24,7 @@ export class MessagesComponent implements OnInit {
 
   onClose() {
 
+    this.showMessages = false;
 
   }
 

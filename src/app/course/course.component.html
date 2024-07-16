@@ -1,4 +1,4 @@
-
+<ng-container *ngIf="(course$ | async) as course">
   <div class="course">
 
     <h2>{{course?.description}}</h2>
@@ -13,15 +13,18 @@
       <th>Duration</th>
       </thead>
 
-      <tr class="lesson-row" *ngFor="let lesson of lessons">
+      <!-- <tr class="lesson-row" *ngFor="let lesson of lessons">
         <td class="seqno-cell">{{lesson.seqNo}}</td>
         <td class="description-cell">{{lesson.description}}</td>
         <td class="duration-cell">{{lesson.duration}}</td>
-      </tr>
+      </tr> -->
 
     </table>
 
   </div>
+
+</ng-container>
+
 
 
 

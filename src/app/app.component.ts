@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import { LoadingService } from './loading/loading.service';
 import { MessagesService } from './messages/messages.service';
 import { CoursesStore } from './services/courses.store';
+import { AuthStore } from './services/auth.store';
 
 
 
@@ -12,7 +13,7 @@ import { CoursesStore } from './services/courses.store';
 })
 export class AppComponent implements  OnInit {
 
-    constructor() {
+    constructor(public authStore: AuthStore) {
 
     }
 
@@ -22,6 +23,7 @@ export class AppComponent implements  OnInit {
     }
 
   logout() {
+    this.authStore.logout();
 
   }
 
